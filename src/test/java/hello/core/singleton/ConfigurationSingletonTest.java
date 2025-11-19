@@ -30,4 +30,14 @@ public class ConfigurationSingletonTest {
         // 모두 같은 인스턴스 사용
 
     }
+
+    @Test
+    void configurationDeep(){
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig appConfig = ac.getBean(AppConfig.class);
+
+        System.out.println("bean = " + appConfig);
+
+    }
 }
